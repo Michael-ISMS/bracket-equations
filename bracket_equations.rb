@@ -27,5 +27,4 @@ module BracketEquations
     equation.to_s
   end
 
-
 end
