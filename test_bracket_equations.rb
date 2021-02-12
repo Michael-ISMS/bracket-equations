@@ -33,4 +33,9 @@ class TestBraketEquations < Minitest::Test
   def test_that_simplify_string_equations_can_add_brakets_with_multiple_zeros
     assert_equal BracketEquations.simplify_string_equation("(0 + 0) + (0 - 0)"), 0
   end
+
+  def test_that_simplify_string_equations_can_handle_negative_values
+    assert_equal BracketEquations.simplify_string_equation("(-9 + 4) + 5"), 0
+  end
+
 end
