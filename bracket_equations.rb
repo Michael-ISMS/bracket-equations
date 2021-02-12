@@ -3,7 +3,7 @@ module BracketEquations
   def self.simplify_string_equation(equation)
     return calculate_string_eq(equation).to_i unless equation.include? '('
 
-    calculable = /\((\d+\ [\+\-]\ \d+|\d)\)/
+    calculable = /\((\-?\d+\ [\+\-]\ \-?\d+|\-?\d)\)/
     calcable_eq = equation.match(calculable).captures.first
     calculated_value = calculate_string_eq(calcable_eq)
 
