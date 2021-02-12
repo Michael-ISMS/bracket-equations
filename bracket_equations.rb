@@ -7,7 +7,7 @@ module BracketEquations
     calcable_eq = equation.match(calculable).captures.first
     calculated_value = calculate_string_eq(calcable_eq)
 
-    simpler_eq = equation.sub(calculable, calculate_string_eq(calcable_eq).to_s)
+    simpler_eq = equation.sub(calculable, calculate_string_eq(calcable_eq))
 
     simplify_string_equation(simpler_eq)
   end
@@ -21,10 +21,10 @@ module BracketEquations
     }
 
     operators.keys.each do |k|
-      return operators[k].call(*equation.split(k)) if equation.include? k
+      return operators[k].call(*equation.split(k)).to_s if equation.include? k
     end
 
-    equation
+    equation.to_s
   end
 
 
